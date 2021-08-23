@@ -2,65 +2,20 @@
   padding: 0;
   margin: 0; }
 
-@media screen and (max-width: 320px) {
-  .portada {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background: #FFE194;
-    width: 100%; }
-    .portada .imagen__Portada {
-      width: 100%; }
-      .portada .imagen__Portada .imagen__Logo {
-        width: 100%; }
-    .portada .texto__Portada {
-      width: 100%;
-      font-size: 1rem;
-      text-align: center; }
-  .about {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 400px; }
-    .about .imagen__About {
-      padding: 30px 0px 0px 0px; }
-      .about .imagen__About .imagen__Ilustrativa {
-        width: 100%; }
-    .about .texto__About {
-      text-align: center;
-      font-size: 0.6rem; }
-  .tienda {
+.texto__Tienda {
+  text-align: center;
+  padding: 50px; }
+
+.tienda {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .tienda .contenedor__Card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #E8F6EF; }
-    .tienda .ilustracion__Tienda {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding: 20px; }
-      .tienda .ilustracion__Tienda .imagen__Tienda {
-        width: 50%; }
-    .tienda .texto__Tienda {
-      width: 80%;
-      font-size: 0.6rem;
-      text-align: center; } }
-
-@media screen and (min-width: 1200px) {
-  .portada {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 100px 50px 100px;
-    background: #FFE194;
-    width: 100%; }
-    .portada .imagen__Portada {
-      width: 50%; }
-    .portada .texto__Portada {
-      width: 50%; } }
+    width: 18rem; }
+    .tienda .contenedor__Card .titulo__Card {
+      color: red; }
