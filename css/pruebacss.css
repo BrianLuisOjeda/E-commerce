@@ -1,21 +1,3 @@
 * {
   padding: 0;
   margin: 0; }
-
-.texto__Tienda {
-  text-align: center;
-  padding: 50px; }
-
-.tienda {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
-  .tienda .contenedor__Card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 18rem; }
-    .tienda .contenedor__Card .titulo__Card {
-      color: red; }
