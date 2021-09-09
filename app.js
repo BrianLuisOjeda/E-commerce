@@ -1,6 +1,6 @@
 
 
-class Producto {
+class producto {
     constructor(id, nombre, categoria, precio, img) {
         this.id = id;
         this.nombre = nombre;
@@ -14,15 +14,16 @@ let carritoID = $("#carrito");
 let imprimir = $("#aca");
 let total = $("#total");
 let compra = $("#compra");
+let borrarProducto = $("#borrarProducto")
 
 let productos = []
 let carrito = []
 
 
-let producto1 = new Producto(28, "Pizza", "muzzarella", 300, "./img/pizzaMuzzarella.jpg")
-let producto2 = new Producto(38, "Pizza", "Jamon-morron", 400, "./img/pizzaJamonMorron.jpg")
-let producto3 = new Producto(48, "Pizza", "Napolitana", 350, "./img/pizzaNapolitana.jpg")
-let producto4 = new Producto(58, "Pizza", "Fugazzeta", 400, "./img/pizzaFugazzeta.jpg")
+let producto1 = new producto(28, "Pizza", "muzzarella", 300, "./img/pizzaMuzzarella.jpg")
+let producto2 = new producto(38, "Pizza", "Jamon-morron", 400, "./img/pizzaJamonMorron.jpg")
+let producto3 = new producto(48, "Pizza", "Napolitana", 350, "./img/pizzaNapolitana.jpg")
+let producto4 = new producto(58, "Pizza", "Fugazzeta", 400, "./img/pizzaFugazzeta.jpg")
 
 productos.push(producto1)
 productos.push(producto2)
@@ -34,7 +35,7 @@ console.log(productos);
 for (const producto of productos) {
 
     imprimir.append(`
-<div class="card col-3" style="width: 14rem;">
+<div class="card col-3" data-aos="zoom-in" style="width: 14rem;">
 <img src="${producto.img}" class="card-img-top" alt="...">
 <div class="card-body">
     <h5 class="card-title">${producto.nombre}</h5>
@@ -79,6 +80,7 @@ const imprimirCarrito = () => {
       <td>${e.nombre} </td>
       <td>${e.categoria}</td>
       <td> $ ${e.precio}</td>
+      <td><button id="borrarProducto" type="button" class="btn btn-danger" onclick="borrarProducto(${e.id})">X</button></td>
     </tr>
 `)
     })
@@ -99,6 +101,7 @@ const precioTotal = () => {
     })
 
     total.textContent = precioTotal
+    precioTotal()
 }
 
-precioTotal()
+
