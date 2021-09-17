@@ -22,6 +22,11 @@
     }
 }
 
-.table{
-    width: 60%;
+.carrito{
+
+    @include display(flex, row, space-between, center);
+
+    .table{
+        width: 60%;
+    }
 }
