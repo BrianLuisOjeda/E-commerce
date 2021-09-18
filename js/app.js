@@ -15,6 +15,7 @@ let imprimir = $("#aca");
 let total = $("#total");
 let compra = $("#compra");
 
+
 let productos = []
 let carrito = []
 
@@ -90,7 +91,7 @@ const imprimirCarrito = () => {
       <td>${e.nombre} </td>
       <td>${e.categoria}</td>
       <td> $ ${e.precio}</td>
-      <td id="Total"> </td>
+      <td id ="Total"> </td>
       <td><button type="button" id="borrarProducto" class="btn btn-danger btnBorrar"  onclick="borrarProductoCarrito(${e.id})">X</button></td>
     </tr>
 `)

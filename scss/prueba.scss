@@ -12,6 +12,10 @@
     align-items: center;
     justify-content: center;
 
+    .nav-link{
+        color: black;
+    }
+
     .btnDarkMode{
         width: 5rem;
     }
@@ -43,4 +47,5 @@
         }
         
     }
+    
 }
