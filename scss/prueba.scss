@@ -1,4 +1,5 @@
 @import "mixin.scss";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
 *{
     padding: 0;
@@ -10,23 +11,36 @@
     height: 7rem;
     align-items: center;
     justify-content: center;
+
+    .btnDarkMode{
+        width: 5rem;
+    }
+
 }
 .catalogo{
     @include display(flex, row, center, center);
     width: 100%;
+    padding: 2rem 5rem 5rem 5rem;
 
     .card{
         justify-content: center;
         align-items: left;
         margin: 10px 10px 0px 10px;
+    
     }
 }
 
 .carrito{
 
-    @include display(flex, row, space-between, center);
+    @include display(flex, row, center, center);
+    padding: 5rem 10rem 5rem 10rem;
 
     .table{
-        width: 60%;
+        background-color: #346751;
+
+        td{
+            background-color: #346751;
+        }
+        
     }
 }

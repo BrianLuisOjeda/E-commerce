@@ -1,3 +1,4 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 * {
   padding: 0;
   margin: 0; }
@@ -6,13 +7,16 @@
   height: 7rem;
   align-items: center;
   justify-content: center; }
+  .nav .btnDarkMode {
+    width: 5rem; }
 
 .catalogo {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%; }
+  width: 100%;
+  padding: 2rem 5rem 5rem 5rem; }
   .catalogo .card {
     justify-content: center;
     align-items: left;
@@ -21,7 +25,10 @@
 .carrito {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 10rem 5rem 10rem; }
   .carrito .table {
-    width: 60%; }
+    background-color: #346751; }
+    .carrito .table td {
+      background-color: #346751; }
