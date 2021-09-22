@@ -27,7 +27,7 @@ $("#btnEnviarMensajeContacto").on(`click`, () => {
 
   $(".modal-body").append(`
   <div class="alert alert-primary" role="alert">
-    Estamos preparando su pedido!!!
+    Estamos preparando su pedido!!!En breve nos contactaremos con vos!!!!
   </div>`)
 
 

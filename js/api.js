@@ -1,5 +1,5 @@
 
-const URLGET = "https://restcountries.eu/rest/v2/all";
+const URLGET = "https://api.mercadolibre.com/countries#json";
 
 
 $("#selectPaises").prepend(`<select value""></select>`);
