@@ -12,25 +12,36 @@
   .nav .btnDarkMode {
     width: 5rem; }
 
-.catalogo {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+main {
   padding: 2rem 5rem 5rem 5rem; }
-  .catalogo .card {
+  main .catalogo {
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: left;
-    margin: 10px 10px 0px 10px; }
-
-.carrito {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem 10rem 5rem 10rem; }
-  .carrito .table {
-    background-color: #346751; }
-    .carrito .table td {
+    align-items: center;
+    width: 100%; }
+    main .catalogo .card {
+      justify-content: center;
+      align-items: left;
+      margin: 10px 10px 0px 10px; }
+  main .carrito {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    main .carrito .table {
       background-color: #346751; }
+      main .carrito .table td {
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        background-color: #346751; }
+        main .carrito .table td .img-thumbnail {
+          width: 10rem; }
+    main .carrito .containerBtn {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center; }
+      main .carrito .containerBtn .btnFinalizarCompra {
+        width: 10rem; }

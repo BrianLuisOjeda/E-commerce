@@ -10,7 +10,7 @@ $("#theme").on("click", () => {
 
 const darkTheme = () => {
 
-    
+    $("main").css("background-color","#141414")
     $(".nav").css("background-color","#1c1c1c")
     $(".nav-link").css("color","white")
     $(".catalogo").css("background-color","#141414")
@@ -20,7 +20,7 @@ const darkTheme = () => {
     $("#theme").removeClass("btn-outline-dark")
     $("#theme").addClass("btn-outline-light")
     $(".card").css("background-color", "#1c1c1c")
-    $(".carrito").css("background-color", "#1c1c1c")
+    $(".carrito").css("background-color", "#141414")
     $(".table").css("background-color", "#346751")
     $("th").css("color", "white")
     $("td").css("color", "white",
@@ -33,6 +33,7 @@ const darkTheme = () => {
 
 const lightTheme = () => {
 
+    $("main").css("background-color","white")
     $(".nav").css("background-color","white")
     $(".nav-link").css("color","black")
     $(".catalogo").css("background-color","white")

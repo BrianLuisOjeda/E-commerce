@@ -21,30 +21,54 @@
     }
 
 }
-.catalogo{
-    @include display(flex, row, center, center);
-    width: 100%;
+
+main{
     padding: 2rem 5rem 5rem 5rem;
 
-    .card{
-        justify-content: center;
-        align-items: left;
-        margin: 10px 10px 0px 10px;
+    .catalogo{
+        @include display(flex, row, center, center);
+        width: 100%;
+        
     
-    }
-}
-
-.carrito{
-
-    @include display(flex, row, center, center);
-    padding: 5rem 10rem 5rem 10rem;
-
-    .table{
-        background-color: #346751;
-
-        td{
-            background-color: #346751;
+        .card{
+            justify-content: center;
+            align-items: left;
+            margin: 10px 10px 0px 10px;
+        
         }
+    }
+    
+    .carrito{
+    
+        @include display(flex, row, center, center);
+        
+        
+    
+        .table{
+            background-color: #346751;
+    
+            td{
+                justify-content: center;
+                align-items: center;
+                text-align: left;
+                background-color: #346751;
+    
+                .img-thumbnail{
+                    width: 10rem;
+                }
+            }
+            
+        }
+        .containerBtn{
+            @include display(flex, row, flex-end, center);
+            
+    
+            .btnFinalizarCompra{
+                width: 10rem;
+                
+            }
+        }
+        
         
     }
     

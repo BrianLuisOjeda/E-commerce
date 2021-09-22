@@ -1,8 +1,36 @@
 
+class Persona {
 
-$("#btnEnviarMensajeContacto").on("click", () => {
+  constructor(email, telefono, comentario, pais){
+    this.email = email;
+    this.telefono = telefono;
+    this.comentario = comentario;
+    this.pais = pais
+  }
+}
 
-    $(".modal-body").append(`<div class="alert alert-primary" role="alert">
-    Su mensaje sera respondido en breve, chequea tu correo!
+const imprimirDatos = () => {
+
+  const user = new Persona(
+    $("#emailUsuario").val(),
+    $("#telefonoUsuario").val(),
+    $("#comentarioUsuario").val(),
+    $("#selectPaises").val()
+  )
+  console.log(user);
+}
+
+$("#btnEnviarMensajeContacto").on(`click`, () => {
+
+  imprimirDatos()
+  $("#mensajeEnviado")[0].reset();
+
+  $(".modal-body").append(`
+  <div class="alert alert-primary" role="alert">
+    Estamos preparando su pedido!!!
   </div>`)
+
+
+    
 })
+

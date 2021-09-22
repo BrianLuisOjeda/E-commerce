@@ -88,10 +88,11 @@ const imprimirCarrito = () => {
     $("#compra").append(`
         <tr class="selectorAnimado">
       <th scope="row">1</th>
+      <td><img src="${e.img}" class="img-thumbnail" alt="imagenDelProducto"></td>
       <td>${e.nombre} </td>
       <td>${e.categoria}</td>
       <td> $ ${e.precio}</td>
-      <td id ="Total"> </td>
+      <td id="Total"> </td>
       <td><button type="button" id="borrarProducto" class="btn btn-danger btnBorrar"  onclick="borrarProductoCarrito(${e.id})">X</button></td>
     </tr>
 `)
