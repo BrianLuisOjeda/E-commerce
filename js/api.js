@@ -1,9 +1,6 @@
 
 const URLGET = "https://api.mercadolibre.com/countries#json";
 
-
-$("#selectPaises").prepend(`<select value""></select>`);
-
 $("#selectPaises").click(() => {
 
     $.get(URLGET,(res, state) => {

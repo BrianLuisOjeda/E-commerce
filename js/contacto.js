@@ -1,36 +1,36 @@
 
 class Persona {
 
-  constructor(email, telefono, comentario, pais){
-    this.email = email;
+  constructor({
+        nombre = "",
+        telefono = 0,
+        pais = "",
+  }) {
+    this.nombre = nombre;
     this.telefono = telefono;
-    this.comentario = comentario;
-    this.pais = pais
+    this.pais = pais;
   }
 }
 
-const imprimirDatos = () => {
+$("#btnEnviarMensajeContacto").on(`click`, (e) => {
+  e.preventDefault()
 
-  const user = new Persona(
-    $("#emailUsuario").val(),
-    $("#telefonoUsuario").val(),
-    $("#comentarioUsuario").val(),
-    $("#selectPaises").val()
-  )
-  console.log(user);
-}
+  const usuario = new Persona ({
+    nombre: $("#nombreUsuario").val(),
+    telefono: $("#telefonoUsuario").val(),
+    pais: $("#selectPaises").val(),
+  })
 
-$("#btnEnviarMensajeContacto").on(`click`, () => {
-
-  imprimirDatos()
-  $("#mensajeEnviado")[0].reset();
+  const { nombre, telefono, pais } = usuario
 
   $(".modal-body").append(`
   <div class="alert alert-primary" role="alert">
-    Estamos preparando su pedido!!!En breve nos contactaremos con vos!!!!
-  </div>`)
+    Estamos preparando su pedido !!!Te hemos enviado un mensaje a ${nombre}
+    con telefono: ${telefono}
+  </div>`);
 
+  $("#mensajeEnviado")[0].reset();
 
-    
+  localStorage.clear()
+  
 })
-

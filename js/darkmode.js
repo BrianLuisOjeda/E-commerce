@@ -1,9 +1,11 @@
+
+
 $("#theme").on("click", () => {
 
     if(localStorage.getItem("theme") == "dark"){
-        lightTheme()
+        darkTheme();
     }else {
-        darkTheme()
+        lightTheme();
     }
 
 })

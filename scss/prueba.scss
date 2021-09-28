@@ -6,7 +6,6 @@
     margin: 0;
 }
 
-
 .nav{
     height: 7rem;
     align-items: center;
@@ -29,7 +28,6 @@ main{
         @include display(flex, row, center, center);
         width: 100%;
         
-    
         .card{
             justify-content: center;
             align-items: left;
@@ -39,10 +37,7 @@ main{
     }
     
     .carrito{
-    
         @include display(flex, row, center, center);
-        
-        
     
         .table{
             background-color: #346751;
@@ -62,7 +57,6 @@ main{
         .containerBtn{
             @include display(flex, row, flex-end, center);
             
-    
             .btnFinalizarCompra{
                 width: 10rem;
                 

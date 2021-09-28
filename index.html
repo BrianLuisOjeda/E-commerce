@@ -38,6 +38,8 @@
     </div>
 
     <div class="carrito container-fluid row" id="carrito">
+      <div id="carritoVacio"></div>
+      <div id="pedido"></div>
       <table id="table" class="table col-6 ">
         <thead>
           <tr>
@@ -46,13 +48,22 @@
             <th scope="col">Nombre</th>
             <th scope="col">Categoria</th>
             <th scope="col">Precio</th>
-            <th scope="col">Total</th>
+            <th scope="col"></th>
             <th scope="col"></th>
           </tr>
         </thead>
         <tbody id="compra">
 
         </tbody>
+        <tfoot>
+          <tr>
+            <th>Total</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th id="total"></th>
+          </tr>
+        </tfoot>
         
       </table>
       <div class="containerBtn">
@@ -64,28 +75,24 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Contacte con nosotros</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Completa para finalizar la compra</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form id="mensajeEnviado" method="" action="">
                 <div class="mb-3">
-                  <label for="" class="form-label">Ingresa tu E-mail:</label>
-                  <input type="email" class="form-control" id="emailUsuario"
-                    placeholder="nombre@ejemplo.com" required>
+                  <label for="" class="form-label">Ingre su Nombre</label>
+                  <input type="text" name="" class="form-control" id="nombreUsuario"
+                    placeholder="Nombre" required>
                 </div>
                 <div class="mb-3">
-                  <label for="" class="form-label">Telefono:</label>
-                  <input type="tel" class="form-control" id="telefonoUsuario">
+                  <label for="" class="form-label"> iNgrese su Telefono</label>
+                  <input type="tel" name="" class="form-control" id="telefonoUsuario" placeholder="Telefono">
                 </div>
                 <div class="mb-3">
-                  <label for="" class="form-label">Selescciona tu pais:</label>
-                  <select id="selectPaises" class="form-select" aria-label="Default select example">
+                  <label for="" class="form-label">Selecciona tu pais</label>
+                  <select id="selectPaises" name="" class="form-select" aria-label="Default select example">
                   </select>
-                </div>
-                <div class="mb-3">
-                  <label for="" class="form-label">Escribe tu mensaje:</label>
-                  <textarea class="form-control" id="comentarioUsuario" rows="3" required></textarea>
                 </div>
               </form>
             </div>
@@ -111,10 +118,10 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
-  <script src="./js/darkmode.js"></script>
   <script src="./js/contacto.js"></script>
-  <script src="./js/app.js"></script>
   <script src="./js/api.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/darkmode.js"></script>
 </body>
 
 </html>

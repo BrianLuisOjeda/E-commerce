@@ -20,14 +20,14 @@ let productos = []
 let carrito = []
 
 
-let producto1 = new producto(28, "Pizza", "muzzarella", 300, "./img/pizzaMuzzarella.jpg")
-let producto2 = new producto(38, "Pizza", "Jamon-morron", 400, "./img/pizzaJamonMorron.jpg")
-let producto3 = new producto(48, "Pizza", "Napolitana", 350, "./img/pizzaNapolitana.jpg")
-let producto4 = new producto(58, "Pizza", "Fugazzeta", 400, "./img/pizzaFugazzeta.jpg")
-let producto5 = new producto(68, "Pizza", "Cuatro quesos", 450, "./img/pizza-4-quesos.jpg")
-let producto6 = new producto(78, "Pizza", "Pepperoni", 450, "./img/pizzaPepperoni.jpg")
-let producto7 = new producto(88, "Pizza", "Hawaiana", 400, "./img/pizzaHawaiana.jpg")
-let producto8 = new producto(98, "Pizza", "Margarita", 300, "./img/pizzaMargarita.jpg")
+let producto1 = new producto(1, "Pizza", "muzzarella", 300, "../img/pizzaMuzzarella.jpg")
+let producto2 = new producto(2, "Pizza", "Jamon-morron", 400, "../img/pizzaJamonMorron.jpg")
+let producto3 = new producto(3, "Pizza", "Napolitana", 350, "../img/pizzaNapolitana.jpg")
+let producto4 = new producto(4, "Pizza", "Fugazzeta", 400, "../img/pizzaFugazzeta.jpg")
+let producto5 = new producto(5, "Pizza", "Cuatro quesos", 450, "../img/pizza-4-quesos.jpg")
+let producto6 = new producto(6, "Pizza", "Pepperoni", 450, "../img/pizzaPepperoni.jpg")
+let producto7 = new producto(7, "Pizza", "Hawaiana", 400, "../img/pizzaHawaiana.jpg")
+let producto8 = new producto(8, "Pizza", "Margarita", 300, "../img/pizzaMargarita.jpg")
 
 
 productos.push(producto1)
@@ -39,8 +39,6 @@ productos.push(producto6)
 productos.push(producto7)
 productos.push(producto8)
 
-
-console.log(productos);
 
 for (const producto of productos) {
 
@@ -59,11 +57,10 @@ for (const producto of productos) {
 
 
 
-const añadirCarrito = (idPorOnclick) => {
+const añadirCarrito = (id) => {
 
-  const objetoIdentificado = productos.find(e => e.id == idPorOnclick)
+  const objetoIdentificado = productos.find(e => e.id == id)
   console.log(objetoIdentificado);
-
 
   if (JSON.parse(localStorage.getItem("carrito")) != null) {
     let carritoNEW = JSON.parse(localStorage.getItem("carrito"))
@@ -79,35 +76,42 @@ const añadirCarrito = (idPorOnclick) => {
 
 }
 
-
 const imprimirCarrito = () => {
 
   let carritoDelStorage = JSON.parse(localStorage.getItem("carrito"))
 
-  carritoDelStorage.forEach(e => {
-    $("#compra").append(`
-        <tr class="selectorAnimado">
-      <th scope="row">1</th>
-      <td><img src="${e.img}" class="img-thumbnail" alt="imagenDelProducto"></td>
-      <td>${e.nombre} </td>
-      <td>${e.categoria}</td>
-      <td> $ ${e.precio}</td>
-      <td id="Total"> </td>
-      <td><button type="button" id="borrarProducto" class="btn btn-danger btnBorrar"  onclick="borrarProductoCarrito(${e.id})">X</button></td>
-    </tr>
-`)
-  })
+  if (carritoDelStorage != null) {
+    carritoDelStorage.forEach(e => {
+      $("#compra").append(`
+          <tr class="selectorAnimado">
+        <th scope="row">1</th>
+        <td><img src="${e.img}" class="img-thumbnail" alt="imagenDelProducto"></td>
+        <td>${e.nombre} </td>
+        <td>${e.categoria}</td>
+        <td> $ ${e.precio}</td>
+        <td> </td>
+        <td><button type="button" id="borrarProducto" class="btn btn-danger btnBorrar"  onclick="borrarProductoCarrito(${e.id})">X</button></td>
+      </tr>
+      `)
+    })
+  }else {
+    $("#carritoVacio").append(`
+    <div class="alert alert-danger" role="alert">
+      El carrito esta vacio!!!Agregue un producto!!!
+    </div>
+    `)
+   
+  }
 
 }
 imprimirCarrito()
 
 
-const borrarProductoCarrito = (idPorOnclick) => {
+const borrarProductoCarrito = (id) => {
 
-  
   const carritoDelStorage = JSON.parse(localStorage.getItem("carrito"));
 
-  const indexIdentificado = carritoDelStorage.findIndex(e => e.id == idPorOnclick)
+  const indexIdentificado = carritoDelStorage.findIndex(e => e.id == id)
 
   if (indexIdentificado >= 0) {
     carritoDelStorage.splice(indexIdentificado, 1)
@@ -117,7 +121,6 @@ const borrarProductoCarrito = (idPorOnclick) => {
   
 }
 borrarProductoCarrito()
-
 
 $("#modalCarrito").on("click", () => {
 
@@ -136,10 +139,9 @@ const precioTotal = () => {
   carritoDelStorage.forEach(e=> {
 
       precioTotal = precioTotal + e.precio 
-      console.log(precioTotal);
   })
 
-  $("#Total").append(`${precioTotal}`)
+  $("#total").append(`$ ${precioTotal}`)
   total.textContent =  precioTotal;
 }
 
