@@ -2,7 +2,7 @@
 
 $("#theme").on("click", () => {
 
-    if(localStorage.getItem("theme") == "dark"){
+    if(localStorage.getItem("theme") == "light"){
         darkTheme();
     }else {
         lightTheme();

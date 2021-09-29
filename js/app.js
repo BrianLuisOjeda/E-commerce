@@ -44,7 +44,7 @@ for (const producto of productos) {
 
   imprimir.append(`
 <div class="card col-3" data-aos="zoom-in" style="width: 14rem;">
-<img src="${producto.img}" class="card-img-top" alt="...">
+<img src="${producto.img}" class="card-img-top" alt="imagenDelProducto">
 <div class="card-body">
     <h5 class="card-title">${producto.nombre}</h5>
     <p class="card-text">${producto.categoria}</p>
